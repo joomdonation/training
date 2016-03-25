@@ -20,27 +20,9 @@
 		<sql>
 			<file driver="mysql" charset="utf8">sql/uninstall.training.sql</file>
 		</sql>
-	</uninstall>
-	<media destination="com_training" folder="site/media">						
-		<folder>assets</folder>
-		<folder>thumbs</folder>		
-	  </media>
-	  <languages>
-		<language tag="en-GB">site/languages/en-GB/en-GB.com_training.ini</language>
-	  </languages>
-	  <files folder="site">      
-		<filename>training.php</filename>			
-		<folder>controller</folder>	
-		<folder>model</folder>		    
-		<folder>view</folder>	
-		<folder>helper</folder>		
-	  </files>	
+	</uninstall>		
 	<administration>
-		<menu>Training</menu>
-		<submenu>
-			<menu link="option=com_training&amp;view=categories" view="categories">TRAINING CATEGORIES</menu>
-			<menu link="option=com_training&amp;view=items" view="items">TRAINING ITEMS</menu>			
-		</submenu>
+		<menu>Training</menu>		
 		<files folder="admin">
 			<filename>index.html</filename>
 			<filename>training.php</filename>				
