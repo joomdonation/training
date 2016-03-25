@@ -11,19 +11,5 @@
 // no direct access
 defined('_JEXEC') or die;
 
-// Require the RAD library
-require_once JPATH_ADMINISTRATOR . '/components/com_training/libraries/rad/autoload.php';
-
-// Register component classes with Joomla, make these classes autoload
-JLoader::registerPrefix('Training', dirname(__FILE__));
-
-$input  = new RADInput();
-$config = array(
-	'default_view'             => 'categories',
-	'default_controller_class' => 'TrainingController'
-);
-
-RADController::getInstance($input->getCmd('option'), $input, $config)
-	->execute()
-	->redirect();
+echo 'Hello World !';
 
