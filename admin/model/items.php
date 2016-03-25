@@ -11,7 +11,7 @@
 // no direct access
 defined('_JEXEC') or die;
 
-class TrainingModelCategory extends RADModelList
+class TrainingModelItems extends RADModelList
 {
 	public function __construct($config = array())
 	{
@@ -24,9 +24,7 @@ class TrainingModelCategory extends RADModelList
 	 * Builds a WHERE clause for the query
 	 */
 	protected function buildQueryWhere(JDatabaseQuery $query)
-	{
-		$query->where('published = 1');
-
+	{		
 		if ($this->state->filter_category_id)
 		{
 			$query->where('category_id = ' . $this->state->filter_category_id);
