@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>Training</name>
+	<creationDate>25.03.2016</creationDate>
+	<author>Tuan Pham Ngoc</author>
+	<authorEmail>tuanpn@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<copyright>Copyright (C) 2014 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>A sample component used to show you how to develop a Joomla component using Ossoltuion's RAD library</description>
+	<scriptfile>install.training.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.training.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.training.sql</file>
+		</sql>
+	</uninstall>
+	<media destination="com_training" folder="site/media">						
+		<folder>assets</folder>		
+	  </media>
+	  <languages>
+		<language tag="en-GB">site/languages/en-GB/en-GB.com_training.ini</language>
+	  </languages>
+	  <files folder="site">      
+		<filename>training.php</filename>			
+		<folder>controller</folder>	
+		<folder>model</folder>		    
+		<folder>view</folder>	
+		<folder>helper</folder>		
+	  </files>	
+	<administration>
+		<menu>Training</menu>
+		<submenu>
+			<menu link="option=com_training&amp;view=categories" view="categories">TRAINING CATEGORIES</menu>
+			<menu link="option=com_training&amp;view=items" view="items">TRAINING ITEMS</menu>			
+		</submenu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>training.php</filename>				
+			<folder>libraries</folder>
+			<folder>assets</folder>
+			<folder>model</folder>			
+			<folder>controller</folder>
+			<folder>view</folder>
+			<folder>table</folder>
+			<folder>sql</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">languages/en-GB/en-GB.com_training.ini</language>
+			<language tag="en-GB">languages/en-GB/en-GB.com_training.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

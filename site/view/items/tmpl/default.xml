@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Items List">
+		<message>
+			Displays a list of items from certain category
+		</message>
+	</layout>
+	<state>
+		<name>Items List</name>
+		<description>Displays a list of items from certain category</description>
+        <fields name="request">
+            <fieldset name="request">
+                <field name="id" type="text" size="3" default="0" label="Category" description="Enter ID of the category you want to display items from" />
+            </fieldset>
+        </fields>
+	</state>
+</metadata>

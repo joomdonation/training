@@ -1,0 +1,35 @@
+<?php
+/**
+ * @version        2.0.0
+ * @package        Joomla
+ * @subpackage     Training
+ * @author         Tuan Pham Ngoc
+ * @copyright      Copyright (C) 2015 - 2016 Ossolution Team
+ * @license        GNU/GPL, see LICENSE.php
+ */
+
+// no direct access
+defined('_JEXEC') or die;
+
+class com_trainingInstallerScript 
+{
+	public function preflight($type, $parent)
+	{
+	
+	}
+	
+	public function install($parent)
+	{
+		
+	}
+
+	public function update($parent)
+	{
+		
+	}
+
+	public function postflight($type, $parent)
+	{
+		
+	}
+}
