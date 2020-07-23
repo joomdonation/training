@@ -11,7 +11,7 @@
 // no direct access
 defined('_JEXEC') or die;
 
-class TrainingModelCategory extends OSFModelAdmin
+class TrainingModelCategory extends RADModelAdmin
 {
 	public function store($input, $ignore = array())
 	{
