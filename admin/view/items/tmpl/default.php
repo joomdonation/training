@@ -8,9 +8,7 @@
  * @license        GNU/GPL, see LICENSE.php
  */
 
-// no direct access
 defined('_JEXEC') or die;
-
 ?>
 <form action="index.php?option=com_training&view=items" method="post" name="adminForm" id="adminForm">
 	<table width="100%">
@@ -46,11 +44,14 @@ defined('_JEXEC') or die;
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', 'Title', 'tbl.title', $this->state->filter_order_Dir, $this->state->filter_order); ?>
 				</th>
+                <th class="title">
+					<?php echo JHtml::_('grid.sort', 'Category Title', 'c.title', $this->state->filter_order_Dir, $this->state->filter_order); ?>
+                </th>
 				<th width="10%" nowrap="nowrap">
 					<?php echo JHtml::_('grid.sort', JText::_('Order'), 'tbl.ordering', $this->state->filter_order_Dir, $this->state->filter_order); ?>
 					<?php echo JHtml::_('grid.order', $this->items, 'filesave.png', 'saveorder'); ?>
 				</th>
-				<th class="title">
+				<th class="center">
 					<?php echo JHtml::_('grid.sort', 'Published', 'tbl.published', $this->state->filter_order_Dir, $this->state->filter_order); ?>
 				</th>
 				<th width="1%" nowrap="nowrap">
@@ -60,7 +61,7 @@ defined('_JEXEC') or die;
 			</thead>
 			<tfoot>
 			<tr>
-				<td colspan="6">
+				<td colspan="7">
 					<?php echo $this->pagination->getListFooter(); ?>
 				</td>
 			</tr>
@@ -88,6 +89,9 @@ defined('_JEXEC') or die;
 							<?php echo $row->title; ?>
 						</a>
 					</td>
+                    <td>
+                        <?php echo $row->category_title; ?>
+                    </td>
 					<td class="order">
 						<span><?php echo $this->pagination->orderUpIcon($i, true, 'orderup', 'Move Up', $ordering); ?></span>
 						<span><?php echo $this->pagination->orderDownIcon($i, $n, true, 'orderdown', 'Move Down', $ordering); ?></span>

@@ -8,7 +8,6 @@
  * @license        GNU/GPL, see LICENSE.php
  */
 
-// no direct access
 defined('_JEXEC') or die;
 ?>
 <form action="index.php?option=com_training&view=categories" method="post" name="adminForm" id="adminForm">
@@ -70,7 +69,7 @@ defined('_JEXEC') or die;
 			for ($i = 0, $n = count($this->items); $i < $n; $i++)
 			{
 				$row       = $this->items[$i];
-				$link      = JRoute::_('index.php?option=com_training&view=categoryid=' . $row->id);
+				$link      = JRoute::_('index.php?option=com_training&view=category&id=' . $row->id);
 				$checked   = JHtml::_('grid.id', $i, $row->id);
 				$published = JHtml::_('grid.published', $row, $i, 'tick.png', 'publish_x.png', 'category.');
 				?>

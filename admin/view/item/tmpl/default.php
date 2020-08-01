@@ -17,7 +17,8 @@ $editor = JFactory::getEditor();
 	Joomla.submitbutton = function(task)
 	{
 		var form = document.adminForm;
-		if (task == 'item.cancel')
+
+		if (task == 'cancel')
         {
 			Joomla.submitform(task, form);
 		}
