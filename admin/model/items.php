@@ -21,40 +21,13 @@ class TrainingModelItems extends RADModelList
 	}
 
 	/**
-	 * Build select columns clause
-	 *
-	 * @param   JDatabaseQuery  $query
-	 *
-	 * @return RADModelList
-	 */
-	protected function buildQueryColumns(JDatabaseQuery $query)
-	{
-		$query->select('c.title AS category_title');
-
-		return parent::buildQueryColumns($query);
-	}
-
-	/**
-	 * Build join clauses
-	 *
-	 * @param   JDatabaseQuery  $query
-	 *
-	 * @return RADModelList
-	 */
-	protected function buildQueryJoins(JDatabaseQuery $query)
-	{
-		$query->leftJoin('#__training_categories AS c ON tbl.category_id = c.id');
-
-		return parent::buildQueryJoins($query);
-	}
-
-	/**
 	 * Builds a WHERE clause for the query
 	 */
 	protected function buildQueryWhere(JDatabaseQuery $query)
 	{
 		if ($this->state->filter_category_id)
 		{
+			$query->where('tbl.id IN (SELECT item_id FROM #__training_item_categories WHERE category_id = ' . $this->state->filter_category_id . ')');
 			$query->where('category_id = ' . $this->state->filter_category_id);
 		}
 

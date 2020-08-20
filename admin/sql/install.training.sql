@@ -22,3 +22,10 @@ CREATE TABLE IF NOT EXISTS #__training_items (
   INDEX jos_training_items_FKIndex1(category_id)
 );
 
+CREATE TABLE IF NOT EXISTS #__training_item_categories (
+  id INT NOT NULL AUTO_INCREMENT,
+  item_id INT NOT NULL DEFAULT 0,
+  category_id INT NOT NULL DEFAULT 0,
+  PRIMARY KEY(id)
+);
+

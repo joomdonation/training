@@ -24,10 +24,24 @@ class TrainingViewItemHtml extends RADViewItem
 			->where('published = 1')
 			->order('title');
 		$db->setQuery($query);
+		$categories = $db->loadObjectList();
 
-		$options                    = array();
+		// Get selected categories
+		$selectedCategoryIds = [];
+
+		if ($this->item->id > 0)
+		{
+			$query->clear()
+				->select('category_id')
+				->from('#__training_item_categories')
+				->where('item_id = ' . $this->item->id);
+			$db->setQuery($query);
+			$selectedCategoryIds = $db->loadColumn();
+		}
+
+		$options                    = [];
 		$options[]                  = JHtml::_('select.option', '0', JText::_('TRAINING_SELECT_CATEGORY'), 'id', 'title');
-		$options                    = array_merge($options, $db->loadObjectList());
-		$this->lists['category_id'] = JHtml::_('select.genericlist', $options, 'category_id', '', 'id', 'title', $this->item->category_id);
+		$options                    = array_merge($options, $categories);
+		$this->lists['category_id'] = JHtml::_('select.genericlist', $options, 'category_id[]', 'multiple', 'id', 'title', $selectedCategoryIds);
 	}
 }
