@@ -98,7 +98,7 @@ class TrainingModelItem extends RADModelAdmin
 		// Remove the 0 value in case users also choose Select Category
 		$categoryIds = array_filter($categoryIds);
 
-		if (count($categoryIds))
+		if (count($categoryIds) > 0)
 		{
 			$query->clear()
 				->insert('#__training_item_categories')

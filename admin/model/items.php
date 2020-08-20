@@ -28,7 +28,6 @@ class TrainingModelItems extends RADModelList
 		if ($this->state->filter_category_id)
 		{
 			$query->where('tbl.id IN (SELECT item_id FROM #__training_item_categories WHERE category_id = ' . $this->state->filter_category_id . ')');
-			$query->where('category_id = ' . $this->state->filter_category_id);
 		}
 
 		return parent::buildQueryWhere($query);
